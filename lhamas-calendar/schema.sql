@@ -24,7 +24,8 @@ CREATE TABLE posicao (
 CREATE TABLE evento (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   servico_id INTEGER NOT NULL,
-  dia TEXT NOT NULL,
+  datahora_inicio INTEGER NOT NULL,
+  datahora_fim INTEGER NOT NULL,
   FOREIGN KEY (servico_id) REFERENCES servico (id)
 );
 
@@ -45,8 +46,8 @@ CREATE TABLE pessoa_posicao (
 CREATE TABLE indisponibilidade (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   pessoa_id INTEGER NOT NULL,
-  datahora_inicio TEXT NOT NULL,
-  datahora_fim TEXT NOT NULL,
+  datahora_inicio INTEGER NOT NULL,
+  datahora_fim INTEGER NOT NULL,
   FOREIGN KEY (pessoa_id) REFERENCES pessoa (id)
 );
 
